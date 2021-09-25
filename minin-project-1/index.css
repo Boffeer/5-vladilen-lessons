@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300&display=swap');
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	font-family: 'Merriweather', serif;
+	font-weight: 300;
+	font-style: italic;
+	background: #f8f8f8;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+	box-sizing: border-box;
+	height: calc(1vh * 100);
+}
+
+.slide {
+	max-height: 80%;
+	height: 100%;
+	flex: 1;
+	position: relative;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+	border-radius: 15px;
+	box-sizing: border-box;
+}
+.slide.active {
+	flex: 15;
+}
+.slide__img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	object-fit: cover;
+	z-index: 1;
+}
+.slide__title {
+	position: absolute;
+	left: 3px;
+	bottom: 40px;
+	z-index: 2;
+	color: #fff;
+	text-shadow: 0 0 5px rgba(0,0,0,0.8);
+	margin: 0;
+	font-size: 24px;
+	transform: rotate(-90deg);
+	transition: all 0.4s;
+	opacity: 0;
+}
+.slide.active .slide__title {
+	left: 20px;
+	bottom: 20px;
+	transform: none;
+	transition: all 0.2s ease-in;
+	opacity: 1;
+}
